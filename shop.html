@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My shop page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+</head>
+
+<body>
+    <section id="header">
+        <a href="#"><img src="image/logo_nuoc_hoa_TN.jpg" class="logo" alt=""></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+
+                <li><a href="cart.html"><i class="fa fa-cart-arrow-down"></i></a></li>
+
+
+            </ul>
+        </div>
+    </section>
+    <section id="page-header">
+
+
+        <h2 style="color: red;">#BUY NOW</h2>
+
+        <p style="color: black;">You Only Live Once </p>
+
+    </section>
+    <div><input type="text" id="findProduct" onchange="findperfume()" placeholder="Enter your perfume">
+
+    </div>
+
+    <section id="product1" class="section-p1">
+
+        <div class="pro-container" id="list-product">
+
+
+
+        </div>
+
+        </div>
+
+
+        <div class="pro-container">
+
+
+        </div>
+    </section>
+    <section id="pagination" class="section-p1">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#"><i class="fa fa-long-arrow-alt-right"></i></a>
+
+    </section>
+
+    <section id="newsletter">
+        <div class="newtest">
+            <h4>Sign up for new newsletter</h4>
+            <p>Get email from shop
+                <span>Sign Up</span>
+            </p>
+
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your email">
+            <button class="normal">Sign up</button>
+        </div>
+
+    </section>
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="image/logo_nuoc_hoa_TN.jpg" style width="15%" alt="">
+            <h4>Contact</h4>
+            <p><strong>Adress: </strong>Lorem ipsum dolor sit amet consectetur.</p>
+            <p><strong>Phone: </strong>Lorem ipsum dolor sit amet consectetur.</p>
+            <p><strong>Hours: </strong>Lorem ipsum dolor sit amet consectetur.</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-tiktok"></i>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Term & Conditionns</a>
+            <a href="#">Contact us</a>
+
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <!-- <a href="#">Download on Appstore</a> -->
+            <img id="image-app" src="image/download_on_appstore.jpg" style width="350px" alt="">
+            <!-- <a href="#">Download on Google Play</a> -->
+            <img id="image-app" src="image/Download_on_google_play.png" style width="350px" alt="">
+
+
+        </div>
+        <!-- <div class="copyright">
+            <p>Copyright 2023, Lorem ipsum dolor sit.</p>
+
+        </div> -->
+
+
+    </footer>
+
+</body>
+<script src="./javascript.js"></script>
+<script>
+    var listProduct = document.getElementById('list-product')
+
+    let html = ``
+    myData.map(function (data, index) {
+
+        html += `<div class="pro" onclick="window.location.href='product.html?id=${data.ID}';">
+                <img src="${data.image}" alt="">
+                <div class="des">
+                    <span> ${data.Name}</span>
+                    <h5>${data.Gender}</h5>
+                    <div class="star">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+
+                    <div>
+
+                        <h4>$${data.Price}</h4>
+                    </div>
+                </div>
+
+                <div class="cart">
+                    <a href="#"><i class="fa fa-shopping-bag"></i></a>
+                </div>
+            </div>`
+
+        return html
+    });
+    function sum(a, b) { return a + b };
+
+
+    listProduct.innerHTML = html
+</script>
+
+</html>
