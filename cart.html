@@ -160,6 +160,26 @@
 <script src="javascript.js"></script>
 <script>
     console.log(myCart);
+    let html = ''
+    myCart.map(function (data, index) {
+        html += `<tr>
+                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                    <td><img src="${data.image}" alt=""></td>
+                    <td> ${data.Name}</td>
+                    <td>$${data.Price}</td>
+                    <td>${data.value}</td>
+                    <td><input type="number" value="${this.quantity}"></td>
+
+                </tr>
+    `
+        return html
+
+
+    });
+
+    document.getElementById("tbodycart").innerHTML = html
+
+
 
 
 
