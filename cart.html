@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Cart page</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="image/logo_nuoc_hoa.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 </head>
@@ -41,9 +42,10 @@
                     <td>Remove</td>
                     <td>Image</td>
                     <td>Product</td>
-                    <td>Price</td>
                     <td>Capacity</td>
                     <td>Quantity</td>
+                    <td>Price</td>
+
 
                 </tr>
             </thead>
@@ -61,7 +63,7 @@
             </tbody>
         </table>
     </section>
-    <section id="cart-add" class="section-p1">
+    <!-- <section id="cart-add" class="section-p1">
         <div id="coupon">
             <h3>Apply Coupon</h3>
             <div>
@@ -69,8 +71,47 @@
                 <button class="normal">Apply</button>
             </div>
 
-        </div>
-        <div id="subtotal">
+        </div> -->
+    <div id="subtotal">
+        <h3>Cart Totals</h3>
+        <table>
+
+            <tr>
+                <td>Shipping</td>
+                <td>Free</td>
+            </tr>
+            <tr>
+                <td><strong>Total</strong></td>
+                <td id="totalPriceCart1"><strong>$</strong></td>
+            </tr>
+        </table>
+        <button class="normal" onclick="openInfo()">Proceed to checkout</button>
+    </div>
+    <div id="information">
+        <span onclick="closeInfo()" id="close">Close</span>
+        <form action="#" method="post">
+            <fieldset>
+                <legend style="color: red; font-weight: 800; font-size: 25px;text-align: center;">CUSTOMER INFOMATION
+                </legend>
+                <label for="name">Họ và tên:</label>
+                <input type="text" id="name" name="name">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+
+                <label for="phone">Số điện thoại:</label>
+                <input type="tel" id="phone" name="phone">
+
+                <label for="address">Địa chỉ:</label>
+                <textarea id="address" name="address"></textarea>
+
+                <button type="button">Confirm</button>
+            </fieldset>
+        </form>
+
+
+    </div>
+    <!-- <div id="subtotal">
             <h3>Cart Totals</h3>
             <table>
                 <tr>
@@ -87,7 +128,7 @@
                 </tr>
             </table>
             <button class="normal">Proceed to checkout</button>
-        </div>
+        </div> -->
 
     </section>
 
@@ -157,9 +198,9 @@
                     <td><a onclick="removecart(${data.id})" href="#"><i class="far fa-times-circle"></i></a></td>
                     <td><img src="${data.image}" alt=""></td>
                     <td> ${data.Name}</td>
-                    <td>$${data.Price * data.value * 0.1}</td>
                     <td>${data.value}</td>
-                    <td><input type="number" value="${data.quantity}"></td>
+                    <td>${data.quantity}</td>
+                    <td id = "sprice">$${data.Price * data.value * 0.01 * data.quantity}</td>
 
                 </tr>
     `
@@ -178,8 +219,15 @@
         window.localStorage.setItem('myCart', JSON.stringify(myCart))
         renderPerfume();
 
+
     }
 
+    let totalPriceCart = 0;
+    for (let i = 0; i < myCart.length; i++) {
+        totalPriceCart += parseInt(myCart[i].Price * myCart[i].quantity * myCart[i].value * 0.01)
+    }
+    document.getElementById("totalPriceCart1").innerText = totalPriceCart + "$"
+    console.log(totalPriceCart);
 
 
 

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My web page</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="image/logo_nuoc_hoa.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 </head>
@@ -162,7 +163,7 @@
             <div class="single-pro-details">
               
                 <h4>${data.Name}</h4>
-                <h2 id='priceProduct'>$${data.Price * data.value[0] * 0.1}</h2>
+                <h2 id='priceProduct'>$${data.Price * data.value[0] * 0.01}</h2>
                 <select id ="optionValue">
                    
                     ${data.value.map((value) => {
@@ -186,7 +187,7 @@
     let total;
 
     let priceElement = document.getElementById('priceProduct');
-    // let price = +priceElement.innerHTML.split('$')[1];
+
     let inputQuantity = document.getElementById('valuee')
 
 
@@ -196,7 +197,7 @@
         let selectedValue = +selectedOption.value;
 
         let quantity = inputQuantity.value;
-        let totalPrice = selectedValue * quantity * price * 0.1
+        let totalPrice = selectedValue * quantity * price * 0.01
         priceElement.innerHTML = `$${totalPrice}`
         // console.log(totalPrice);
     });
@@ -208,7 +209,7 @@
     function changeQuantity() {
         let quantity = inputQuantity.value;
         let selectedValue = +mySelect.value
-        total = price * quantity * selectedValue * 0.1
+        total = price * quantity * selectedValue * 0.01
         priceElement.innerHTML = `$${total}`
 
     }
@@ -231,9 +232,14 @@
 
     function addProductToCart(id, image, name, price) {
         let value = mySelect.value
-        let quantity = +inputQuantity.value
+        let quantity = +inputQuantity.value;
+        if (quantity <= 0) {
+            alert('khl');
+            return;
+        }
         console.log(image, name, price, value, quantity)
         let idCard = myCart[myCart.length - 1]
+
         if (idCard == undefined) {
             idCard = 1
         } else {
@@ -241,7 +247,7 @@
         }
         let checkEqualsEntity = false;
         myCart.map((cart) => {
-            if (cart.idProduct == id) {
+            if (cart.idProduct == id && cart.value == value) {
                 cart.quantity += quantity
                 checkEqualsEntity = true
             }
@@ -249,9 +255,11 @@
         if (!checkEqualsEntity) {
             myCart.push({ id: idCard, idProduct: id, Name: name, Price: price, value: value, quantity: quantity, image: image })
         }
+        alert("Sản phẩm đã được thêm vào giỏ hàng")
         localStorage.setItem("myCart", JSON.stringify(myCart))
-        console.log("product", myCart);
+
     }
+
 
 
 </script>

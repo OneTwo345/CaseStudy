@@ -624,7 +624,7 @@ footer .install #image-app {
 #cart table thead td {
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: 18 px;
     padding: 18px 0;
 }
 
@@ -633,7 +633,7 @@ footer .install #image-app {
 }
 
 #cart table tbody td {
-    font-size: 13px;
+    font-size: 20 px;
 }
 
 #cart-add {
@@ -690,4 +690,73 @@ footer .install #image-app {
     border: 1px solid rgb(186, 141, 156);
     padding: 10px;
     font-size: 13px;
+}
+
+#cart table tbody #sprice {
+    color: red;
+    font-size: 20px;
+    font-weight: 800;
+    font-style: initial;
+}
+
+#subtotal table #totalPriceCart1 {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+/* trang trí formm */
+
+#information {
+    display: none;
+    position: fixed;
+    top: 15%;
+    margin: auto;
+    bottom: 15%;
+    right: 91px;
+
+    background-color: white;
+    width: 90%;
+
+
+}
+
+form {
+    width: 95%;
+    margin: auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-family: sans-serif;
+    color: #333333;
+}
+
+button[type="button"] {
+    background-color: #4CAF50;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: sans-serif;
 }
