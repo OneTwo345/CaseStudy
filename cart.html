@@ -93,42 +93,24 @@
             <fieldset>
                 <legend style="color: red; font-weight: 800; font-size: 25px;text-align: center;">CUSTOMER INFOMATION
                 </legend>
-                <label for="name">Họ và tên:</label>
-                <input type="text" id="name" name="name">
+                <label for="name">Your Full Name</label>
+                <input type="text" id="name" name="name" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
 
-                <label for="phone">Số điện thoại:</label>
-                <input type="tel" id="phone" name="phone">
+                <label for="phone">Your Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
 
-                <label for="address">Địa chỉ:</label>
+                <label for="address">Your Address:</label>
                 <textarea id="address" name="address"></textarea>
 
-                <button type="button">Confirm</button>
+                <button type="button" id="thankyou" onclick="thankyou1()">Confirm</button>
             </fieldset>
         </form>
 
 
     </div>
-    <!-- <div id="subtotal">
-            <h3>Cart Totals</h3>
-            <table>
-                <tr>
-                    <td>Cart Subtotal</td>
-                    <td>$ 335</td>
-                </tr>
-                <tr>
-                    <td>Shipping</td>
-                    <td>Free</td>
-                </tr>
-                <tr>
-                    <td><strong>Total</strong></td>
-                    <td><strong>$335</strong></td>
-                </tr>
-            </table>
-            <button class="normal">Proceed to checkout</button>
-        </div> -->
 
     </section>
 
@@ -180,10 +162,6 @@
 
 
         </div>
-        <!-- <div class="copyright">
-            <p>Copyright 2023, Lorem ipsum dolor sit.</p>
-
-        </div> -->
 
 
     </footer>
@@ -194,9 +172,14 @@
     function renderPerfume() {
         let html = ''
         myCart.map(function (data, index) {
+            console.log(data)
             html += `<tr>
-                    <td><a onclick="removecart(${data.id})" href="#"><i class="far fa-times-circle"></i></a></td>
-                    <td><img src="${data.image}" alt=""></td>
+                    <td><a onclick="removecart(${data.id})" href=""><i class="far fa-times-circle"></i></a></td>
+                    <TD>
+                        <a href="/product.html?id=${data.idProduct}">
+             <img src="${data.image}" alt="">
+                </a>
+                            </td>
                     <td> ${data.Name}</td>
                     <td>${data.value}</td>
                     <td>${data.quantity}</td>
@@ -213,15 +196,25 @@
     }
     renderPerfume();
 
+
     function removecart(id) {
+        var confirmed = confirm("Are you sure?")
+        if (!confirmed) {
+            return;
+        }
+
 
         myCart = myCart.filter(data => data.id != id);
         window.localStorage.setItem('myCart', JSON.stringify(myCart))
         renderPerfume();
-
+        let totalPriceCart = 0;
+        for (let i = 0; i < myCart.length; i++) {
+            totalPriceCart += parseInt(myCart[i].Price * myCart[i].quantity * myCart[i].value * 0.01)
+        }
+        document.getElementById("totalPriceCart1").innerText = totalPriceCart + "$"
 
     }
-
+    //Sự kiện tổng tiền
     let totalPriceCart = 0;
     for (let i = 0; i < myCart.length; i++) {
         totalPriceCart += parseInt(myCart[i].Price * myCart[i].quantity * myCart[i].value * 0.01)
@@ -229,13 +222,11 @@
     document.getElementById("totalPriceCart1").innerText = totalPriceCart + "$"
     console.log(totalPriceCart);
 
+    function thankyou1() {
 
-
-
-
-
-
-
+        alert("THANK YOU")
+        window.location.href = "shop.html"
+    }
 
 
 

@@ -1,69 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Form đăng ký</title>
-    <style>
-        form {
-            width: 50%;
-            margin: auto;
-            padding: 20px;
-            background-color: #f2f2f2;
-            border-radius: 5px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        textarea {
-            padding: 10px;
-            width: 100%;
-            border: none;
-            border-radius: 5px;
-            background-color: #ffffff;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            font-size: 16px;
-            font-family: sans-serif;
-            color: #333333;
-        }
-
-        button[type="submit"] {
-            background-color: #4CAF50;
-            color: #ffffff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-family: sans-serif;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 
 <body>
-    <h1>Form đăng ký</h1>
-    <form>
-        <label for="name">Họ và tên:</label>
-        <input type="text" id="name" name="name">
+    <div id="information">
+        <span onclick="closeInfo()" id="close">Close</span>
+        <form action="#" method="post">
+            <fieldset>
+                <legend style="color: red; font-weight: 800; font-size: 25px;text-align: center;">CUSTOMER INFOMATION
+                </legend>
+                <label for="name">Your Full Name</label>
+                <input type="text" id="name" name="name" required>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
 
-        <label for="phone">Số điện thoại:</label>
-        <input type="tel" id="phone" name="phone">
+                <label for="phone">Your Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
 
-        <label for="address">Địa chỉ:</label>
-        <textarea id="address" name="address"></textarea>
+                <label for="address">Your Address:</label>
+                <textarea id="address" name="address"></textarea>
 
-        <button type="submit">Đăng ký</button>
-    </form>
+                <button type="button" id="thankyou" onclick="thankyou1()">Confirm</button>
+            </fieldset>
+        </form>
+
 </body>
+<script>
+    function thankyou1() {
+        console.log("1")
+        alert("thankyou")
+    }
+
+</script>
 
 </html>
