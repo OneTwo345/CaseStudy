@@ -88,13 +88,13 @@
         <button class="normal" onclick="openInfo()">Proceed to checkout</button>
     </div>
     <div id="information">
-        <span onclick="closeInfo()" id="close">Close</span>
+        <span onclick="closeInfo()" id="close" style="background-color: red;color: black;">CLOSE</span>
         <form action="#" method="post">
             <fieldset>
                 <legend style="color: red; font-weight: 800; font-size: 25px;text-align: center;">CUSTOMER INFORMATION
                 </legend>
                 <label for="name">Your Full Name</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name1" name="name" required>
 
                 <label for="email">Your Email:</label>
                 <input type="email" id="email" name="email" required>
@@ -220,14 +220,19 @@
         totalPriceCart += parseInt(myCart[i].Price * myCart[i].quantity * myCart[i].value * 0.01)
     }
     document.getElementById("totalPriceCart1").innerText = totalPriceCart + "$"
-    console.log(totalPriceCart);
+
 
     function thankyou1() {
-
+        var nameInput = document.getElementById("name1");
+        if (nameInput.value === null) {
+            alert("Please fill the form");
+            return
+        }
         alert("THANK YOU")
         window.location.href = "shop.html"
-    }
 
+    }
+    console.log(document.getElementById("name1").value)
 
 
 
