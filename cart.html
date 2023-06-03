@@ -223,11 +223,21 @@
 
 
     function thankyou1() {
+
         var nameInput = document.getElementById("name1");
-        if (nameInput.value === null) {
+        var emailInput = document.getElementById("email");
+        var phoneInput = document.getElementById("phone");
+        var addressInput = document.getElementById("address")
+        console.log(nameInput)
+        console.log(1)
+        if (nameInput.value.trim() === "" || emailInput.value.trim() === "" || phoneInput.value.trim() === "" || addressInput.value.trim() === "") {
             alert("Please fill the form");
-            return
+            return;
         }
+
+        myCart = [];
+        window.localStorage.setItem('myCart', JSON.stringify(myCart))
+        renderPerfume();
         alert("THANK YOU")
         window.location.href = "shop.html"
 
