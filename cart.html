@@ -82,7 +82,7 @@
             </tr>
             <tr>
                 <td><strong>Total</strong></td>
-                <td id="totalPriceCart1"><strong>$</strong></td>
+                <td id="totalPriceCart1"><strong></strong></td>
             </tr>
         </table>
         <button class="normal" onclick="openInfo()">Proceed to checkout</button>
@@ -219,7 +219,7 @@
     for (let i = 0; i < myCart.length; i++) {
         totalPriceCart += parseInt(myCart[i].Price * myCart[i].quantity * myCart[i].value * 0.01)
     }
-    document.getElementById("totalPriceCart1").innerText = totalPriceCart + "$"
+    document.getElementById("totalPriceCart1").innerText = "$" + totalPriceCart
 
 
     function thankyou1() {
