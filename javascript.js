@@ -8,7 +8,7 @@ const myData = [
     { ID: 01, Name: "𝘿𝙠𝙣𝙮 Green Apple 1.1", Gender: "Girl", Price: 60, image: 'image/nuoc_hoa_1_1.jpg', value: [100, 150, 180, 200], minvalue1ml: 0.5, maxquantity: 14 },
     { ID: 02, Name: "Bleu Channal.2.1", Gender: "Girl", Price: 80, image: 'image/nuoc_hoa_2_1.jpg', value: [100, 140, 160, 180, 250], minvalue1ml: 0.5, maxquantity: 13 },
     { ID: 07, Name: "Miss Dior 7.1", Gender: "Girl", Price: 80, image: 'image/nuoc_hoa_7_1.jpg', value: [100, 160, 190, 250, 300, 350], minvalue1ml: 0.5, maxquantity: 15 },
-    { ID: 08, Name: "𝐇𝐞𝐫𝐦𝐞𝐬 𝐋'𝐎𝐦𝐛𝐫𝐞 𝐃𝐞𝐬 𝐌𝐞𝐫𝐯𝐞𝐢𝐥𝐥𝐞𝐬 𝐄𝐃𝐏 8.1", Gender: "Men & Girl", Price: 80, image: 'image/nuoc_hoa_8_1.jpg', value: [10, 50, 70, 150, 320], minvalue1ml: 0.5, maxquantity: 18 },
+    { ID: 08, Name: "𝐇𝐞𝐫𝐦𝐞𝐬 𝐋'𝐎𝐦𝐛𝐫𝐞 𝐃𝐞𝐬 𝐌𝐞𝐫𝐯𝐞𝐢𝐥𝐥𝐞𝐬 𝐄𝐃𝐏 8.1", Gender: "Men & Girl", Price: 80, image: 'image/nuoc_hoa_8_1.jpg', value: [100, 150, 170, 240, 300], minvalue1ml: 0.5, maxquantity: 18 },
     { ID: 09, Name: "𝐂𝐋𝐔𝐁 𝐃𝐄 𝐍𝐔𝐈𝐓 9.1", Gender: "Girl", Price: 70, image: 'image/nuoc_hoa_9_1.jpg', value: [100, 180, 200], minvalue1ml: 0.5, maxquantity: 18 },
     { ID: 10, Name: "𝐉𝐄𝐀𝐍 𝐏𝐀𝐔𝐋𝐆𝐀𝐔𝐋𝐓𝐈𝐄𝐑 𝐒𝐂𝐀𝐍𝐃𝐀𝐋 𝐄𝐃𝐏 10.1", Gender: "Girl", Price: 50, image: 'image/nuoc_hoa_10_1.jpg', value: [100, 150, 180, 200, 250], minvalue1ml: 0.5, maxquantity: 19 },
     { ID: 11, Name: "𝐕𝐚𝐥𝐞𝐧𝐭𝐢𝐧𝐚 𝐁𝐥𝐮𝐬𝐡 𝐄𝐃𝐏 11.1", Gender: "Girl", Price: 50, image: 'image/nuoc_hoa_11_1.jpg', value: [100, 150, 200, 250, 300], minvalue1ml: 0.5, maxquantity: 17 },
